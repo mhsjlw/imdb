@@ -1,4 +1,4 @@
-var imdb = require('../index');
+const imdb = require('../index');
 
 imdb('75070', function(err, data) {
   if(err)
