@@ -1,7 +1,7 @@
 var request = require('request')
 var cheerio = require('cheerio')
 module.exports = function (id, cb) {
-  request('http://www.imdb.com/title/' + id + '/', function (error, response, body) {
+  request('http://akas.imdb.com/title/' + id + '/', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       body = body.replace(/(\r\n|\n|\r)/gm, '').replace(/ +(?= )/g, '')
       $ = cheerio.load(body)
