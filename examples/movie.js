@@ -1,9 +1,11 @@
-const imdb = require('../index');
+const IMDb = require('../')
 
-imdb('tt3659388', function(err, data) {
-  if(err)
-    console.log(err.stack);
+async function example() {
+  let i = new IMDb()
+  let movie = await i.getMovie('tt3501632') // Thor: Ragnarok
+  return movie
+}
 
-  if(data)
-    console.log(data);
-});
+example()
+  .then((movie) => console.log(movie.getTitle()))
+  .catch((e) => console.error(e))
