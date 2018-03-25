@@ -1,17 +1,20 @@
 {
   "name": "imdb",
-  "version": "1.1.0",
-  "description": "An IMDB API for getting information on your favourite movies!",
+  "version": "2.0.0",
+  "description": "An IMDb interface in JavaScript",
   "main": "index.js",
+  "engines": {
+    "node": ">=8"
+  },
   "dependencies": {
-    "cheerio": "^0.19.0",
-    "request": "^2.65.0"
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
-  "author": "mhsjlw <mhsjlw@aol.com>",
+  "author": "mhsjlw",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -24,6 +27,11 @@
   "keywords": [
     "movies",
     "imdb",
-    "api"
-  ]
+    "scrape",
+    "node",
+    "interface"
+  ],
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
 }

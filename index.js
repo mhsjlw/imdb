@@ -1,1 +1,1 @@
-module.exports = require('./src/imdb');
+module.exports = require('./src/');
