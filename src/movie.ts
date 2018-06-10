@@ -1,12 +1,26 @@
-const cheerio = require('cheerio')
-const request = require('request-promise-native')
+import * as cheerio from 'cheerio'
+import request from 'request-promise-native'
 
-class Movie {
-  constructor(id) {
+export default class Movie {
+  id: string
+  title?: string
+  originalTitle?: string
+  poster?: string
+  contentRating?: string
+  year?: string
+  runtime?: string
+  description?: string
+  rating?: number
+  director?: string
+  metascore?: number
+  writer?: string
+  cast?: Array<string>
+
+  constructor(id: string) {
     this.id = id
   }
 
-  async get(endpoint) {
+  async get(endpoint: string): Promise<Movie> {
     let r = await request(`${endpoint}/title/${this.id}/`)
     const $ = cheerio.load(r)
 
@@ -37,12 +51,9 @@ class Movie {
     this.metascore = parseInt(plotSummaryWrapper.find('div.titleReviewBar > div:nth-child(1) > a > div > span').text().trim())
     this.writer = plotSummary.find('div:nth-child(3) > span:nth-child(2) > a > span').text().trim()
 
-    // XXX
-    // this.languages = $('#titleDetails > div:nth-child(5) > a').text().trim()
-
-    let cast = [ ];
+    let cast: Array<string> = [ ];
     let castElements = $('div#main_bottom > div#titleCast > table.cast_list  tr > td.itemprop > a > span')
-    castElements.each(function() { cast.push($(this).text().trim()) })
+    castElements.each(function(this: any) { cast.push($(this).text().trim()) })
     this.cast = cast
 
     return this
@@ -96,5 +107,3 @@ class Movie {
     return this.cast
   }
 }
-
-module.exports = Movie

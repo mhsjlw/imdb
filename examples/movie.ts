@@ -1,6 +1,6 @@
-const IMDb = require('../')
+import { IMDb, Movie } from '../src'
 
-async function example() {
+async function example(): Promise<Movie> {
   let i = new IMDb()
   let movie = await i.getMovie('tt3501632') // Thor: Ragnarok
   return movie

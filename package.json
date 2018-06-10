@@ -1,7 +1,7 @@
 {
   "name": "imdb",
   "version": "2.0.0",
-  "description": "An IMDb interface in JavaScript",
+  "description": "An IMDb interface for Node",
   "main": "index.js",
   "engines": {
     "node": ">=8"
@@ -13,6 +13,20 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   },
   "author": "mhsjlw",
   "license": "MIT",
@@ -32,6 +46,11 @@
     "interface"
   ],
   "devDependencies": {
-    "jest": "^22.4.3"
+    "@types/cheerio": "^0.22.7",
+    "@types/jest": "^23.0.0",
+    "@types/request-promise-native": "^1.0.15",
+    "jest": "^22.4.3",
+    "ts-jest": "^22.4.6",
+    "typescript": "^2.9.1"
   }
 }

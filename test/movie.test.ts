@@ -1,7 +1,10 @@
-const IMDb = require('../')
+import { IMDb, Movie } from '../src'
 
 describe('Movie', async () => {
-  let movie
+  // Account for the IMDb loading times
+  jest.setTimeout(10000)
+
+  let movie: Movie
 
   beforeAll(async () => {
     movie = await (new IMDb()).getMovie('tt3659388')
