@@ -11,6 +11,7 @@ export default class Movie {
   runtime?: string
   description?: string
   rating?: number
+  ratingCount?: number
   director?: string
   metascore?: number
   writer?: string
@@ -47,6 +48,7 @@ export default class Movie {
     this.runtime = titleWrapper.find('div > time').text().trim()
     this.description = plotSummary.find('div.summary_text').text().trim()
     this.rating = parseInt(titleBlock.find('div.ratings_wrapper > div.imdbRating > div.ratingValue > strong > span').text().trim())
+    this.ratingCount = parseInt(titleBlock.find('div.ratings_wrapper > div.imdbRating > a > span').text().replace(/,/g,''))
     this.director = plotSummary.find('div:nth-child(2) > span > a > span').text().trim()
     this.metascore = parseInt(plotSummaryWrapper.find('div.titleReviewBar > div:nth-child(1) > a > div > span').text().trim())
     this.writer = plotSummary.find('div:nth-child(3) > span:nth-child(2) > a > span').text().trim()
@@ -85,6 +87,10 @@ export default class Movie {
 
   getRating() {
     return this.rating
+  }
+
+  getRatingCount() {
+    return this.ratingCount
   }
 
   getPoster() {

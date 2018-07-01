@@ -23,12 +23,12 @@ describe('Movie', async () => {
   })
 
   it('has a content rating', () => {
-    expect(movie.getContentRating()).toBe('PG')
+    expect(movie.getContentRating()).toBe('PG-13')
   })
 
   it('has runtime', () => {
     expect(movie.getRuntime()).toBe('2h 24min')
-  });
+  })
 
   it('has description', () => {
     expect(movie.getDescription()).toBeDefined()
@@ -36,6 +36,10 @@ describe('Movie', async () => {
 
   it('has rating', () => {
     expect(movie.getRating()).toBe(8)
+  })
+
+  it('has ratingCount', () => {
+    expect(movie.getRatingCount()).toBeDefined()
   })
 
   it('has poster', () => {
