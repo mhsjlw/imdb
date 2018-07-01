@@ -26,7 +26,7 @@ describe('Movie', async () => {
   })
 
   it('has a content rating', () => {
-    expect(movie.getContentRating()).toBe('PG')
+    expect(movie.getContentRating()).toBe('PG-13')
   })
 
   it('has runtime', () => {
