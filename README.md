@@ -1,4 +1,4 @@
-IMDb
+IMDb [![CircleCI](https://circleci.com/gh/mhsjlw/imdb.svg?style=svg)](https://circleci.com/gh/mhsjlw/imdb)
 ====
 
 An IMDb interface for Node
