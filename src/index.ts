@@ -1,13 +1,13 @@
 import Movie from './movie'
 
 class IMDb {
-  endpoint: string
+  endpoint: string // eslint-disable-line no-undef
 
-  constructor(endpoint: string = 'https://www.imdb.com') {
+  constructor (endpoint: string = 'https://www.imdb.com') {
     this.endpoint = endpoint
   }
 
-  async getMovie(id: string): Promise<Movie> {
+  async getMovie (id: string): Promise<Movie> {
     return (new Movie(id)).get(this.endpoint)
   }
 }

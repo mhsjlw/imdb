@@ -1,7 +1,10 @@
+/* eslint-env jest */
+
+// eslint-disable-next-line no-unused-vars
 import { IMDb, Movie } from '../src'
 
 describe('Movie', async () => {
-  // Account for the IMDb loading times
+  // IMDb loading times
   jest.setTimeout(10000)
 
   let movie: Movie
