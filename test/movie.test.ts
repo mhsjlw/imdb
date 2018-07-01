@@ -23,7 +23,7 @@ describe('Movie', async () => {
   })
 
   it('has a content rating', () => {
-    expect(movie.getContentRating()).toBe('PG-13')
+    expect(movie.getContentRating()).toBe('PG')
   })
 
   it('has runtime', () => {
